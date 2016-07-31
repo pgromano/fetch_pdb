@@ -1,14 +1,14 @@
 import numpy as np
 import mdtraj as md
 import warnings
-from urllib.request import urlretrieve
+from six.moves import urllib
 
 def fetch(ID):
     try:
         # Fetch from RCSB
         print("Fetching structure from RCSB")
         url = 'http://www.rcsb.org/pdb/files/%s.pdb' % ID
-        urlretrieve(url, ID + ".pdb")
+        urllib.request.urlretrieve(url, ID + ".pdb")
     except:
         warnings.warn(str(ID)+" not found in RCSB:PDB.")
         pass
