@@ -3,3 +3,9 @@ Simple API for fetching PDB files from the [RCSB:Protein Data Bank](http://www.r
 
 ### Installation
     pip install -e . --user
+    
+### Documentation
+
+    from fetch_pdb import *
+    mol = fetch('2N2R')
+    
