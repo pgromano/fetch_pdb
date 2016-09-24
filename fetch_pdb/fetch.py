@@ -15,10 +15,6 @@ def fetch(ID):
 
     molecule = md.load(ID+".pdb").remove_solvent()
     molecule = check_hydrogens(molecule, ID)
-
-    if molecule.xyz.shape[0] == 1:
-        warnings.warn("""PDB file contains only one conformation. For accurate results, it is recommended to supply conformation data from NMR or CryoEM structures. Proceed with caution.
-        """)
     return molecule
 
 def check_hydrogens(molecule, ID):
